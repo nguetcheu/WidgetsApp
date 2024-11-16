@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/myEditText"
+        android:id="@+id/myTextViewCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="247dp"
@@ -40,7 +40,7 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/myTextViewCounter" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
