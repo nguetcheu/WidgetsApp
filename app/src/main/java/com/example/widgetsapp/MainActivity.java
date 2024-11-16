@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
         TextView counterTextView = findViewById(R.id.myTextViewCounter);
         Button incrementButton = findViewById(R.id.myBtn);
 
+        counterTextView.setText("0");
+
         // Création du listener du button
         View.OnClickListener counterListener = new View.OnClickListener() {
-            int count = 0;
             @Override
             public void onClick(View btnView) {
                 Button button = (Button) btnView;
