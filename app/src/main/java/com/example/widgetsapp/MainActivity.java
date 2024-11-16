@@ -1,6 +1,9 @@
 package com.example.widgetsapp;
 
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,11 +16,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Déclaration des views
-    TextView myTextView1 = findViewById(R.id.myTextView);
-    TextView myTextView2 = findViewById(R.id.myTextViewCounter);
-    Button myButton = findViewById(R.id.myBtn);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,16 +27,31 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Déclaration des views
+        TextView titleTextView = findViewById(R.id.myTextView);
+        TextView counterTextView = findViewById(R.id.myTextViewCounter);
+        Button incrementButton = findViewById(R.id.myBtn);
+
         // Création du listener du button
         View.OnClickListener counterListener = new View.OnClickListener() {
+            int count = 0;
             @Override
             public void onClick(View btnView) {
                 Button button = (Button) btnView;
-                int count = 0;
+                count++;
+                counterTextView.setText(countClick(count));
+                Log.d(TAG, "onClick: "+count);
             }
         };
 
+        incrementButton.setOnClickListener(counterListener);
 
+
+    }
+
+    // function de convertion de valeur numérique en string
+    String countClick(int value){
+        return String.valueOf(value);
     }
 
 }
