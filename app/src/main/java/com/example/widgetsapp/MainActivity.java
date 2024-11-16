@@ -1,6 +1,7 @@
 package com.example.widgetsapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Initial
+    // Déclaration des views
     TextView myTextView1 = findViewById(R.id.myTextView);
     TextView myTextView2 = findViewById(R.id.myTextViewCounter);
     Button myButton = findViewById(R.id.myBtn);
@@ -28,5 +29,16 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Création du listener du button
+        View.OnClickListener counterListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View btnView) {
+                Button button = (Button) btnView;
+                int count = 0;
+            }
+        };
+
+
     }
+
 }
